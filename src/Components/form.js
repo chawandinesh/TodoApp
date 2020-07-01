@@ -6,11 +6,11 @@ import "../App.css";
 import Todos from "./todos";
 class Form extends Component {
   state = {
-    inputValue: ""
+    inputValue: "",
   };
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
-      inputValue: e.target.value
+      inputValue: e.target.value,
     });
   };
 
@@ -22,18 +22,17 @@ class Form extends Component {
       this.props.todo(this.state.inputValue);
     }
     this.setState({
-      inputValue: ""
+      inputValue: "",
     });
   };
   render() {
-    console.log(this.props);
     return (
       <div style={{ padding: "40px" }}>
         <Input
           placeholder="Basic usage"
           size="middle"
           style={{ width: "300px" }}
-          onChange={e => {
+          onChange={(e) => {
             this.handleChange(e);
           }}
           value={this.state.inputValue}
